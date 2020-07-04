@@ -4,9 +4,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.codeinger.exdagger.model.Battery;
+import com.codeinger.exdagger.component.DaggerMobileComponent;
+import com.codeinger.exdagger.component.MobileComponent;
 import com.codeinger.exdagger.model.Mobile;
-import com.codeinger.exdagger.model.Proccessor;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -15,9 +16,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Battery battery = new Battery();
-        Proccessor proccessor = new Proccessor();
-        Mobile mobile = new Mobile(battery,proccessor);
+        MobileComponent component = DaggerMobileComponent.create();
+        Mobile mobile = component.getMobile();
+        mobile.run();
 
     }
 }
