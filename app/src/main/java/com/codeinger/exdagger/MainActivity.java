@@ -8,8 +8,13 @@ import com.codeinger.exdagger.component.DaggerMobileComponent;
 import com.codeinger.exdagger.component.MobileComponent;
 import com.codeinger.exdagger.model.Mobile;
 
+import javax.inject.Inject;
+
 
 public class MainActivity extends AppCompatActivity {
+
+    @Inject
+    Mobile mobile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileComponent component = DaggerMobileComponent.create();
-        Mobile mobile = component.getMobile();
+        component.inject(this);
         mobile.run();
 
     }
