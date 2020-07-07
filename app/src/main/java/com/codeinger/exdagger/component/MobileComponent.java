@@ -9,7 +9,7 @@ import dagger.Component;
 @Component
 public interface MobileComponent {
 
-    Mobile getMobile();
+  //  Mobile getMobile();
 
     void inject(MainActivity activity);
 
