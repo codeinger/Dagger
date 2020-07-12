@@ -8,7 +8,7 @@ import dagger.Module;
 import dagger.Provides;
 
 @Module
-public class BatteryModule {
+public abstract class BatteryModule {
 
    @Provides
    static Cobalt getCobalt(){

@@ -9,7 +9,7 @@ import com.codeinger.exdagger.modules.SnapdragonModule;
 
 import dagger.Component;
 
-@Component(modules = {BatteryModule.class, MediaTekModule.class})
+@Component(modules = {BatteryModule.class, SnapdragonModule.class})
 public interface MobileComponent {
 
   //  Mobile getMobile();

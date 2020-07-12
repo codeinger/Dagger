@@ -9,9 +9,15 @@ import dagger.Provides;
 @Module
 public class SnapdragonModule {
 
+    int clockSpeed;
+
+    public SnapdragonModule(int clockSpeed) {
+        this.clockSpeed = clockSpeed;
+    }
+
     @Provides
-    static Proccessor getProccessor(Snapdragon snapdragon){
-        return snapdragon;
+    Proccessor getProccessor(){
+        return new Snapdragon(clockSpeed);
     }
 
 }
