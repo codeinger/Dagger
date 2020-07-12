@@ -19,8 +19,11 @@ public class Mobile {
     }
 
     public void run(){
-        Log.i("MyMobile", "run: ");
+        proccessor.start();
+        Log.i("MyMobile", "Mobile run: ");
     }
+
+
 
 
 
