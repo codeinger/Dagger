@@ -3,12 +3,18 @@ package com.codeinger.exdagger.model;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Named;
 
 public class MediaTek  implements Proccessor {
 
+    int clockSpeed;
+    int core;
+
     @Inject
-    public MediaTek() {
-        Log.i("MyMobile", "MediaTek: ");
+    public MediaTek(@Named("clockSpeed") int clockSpeed,@Named("core") int core) {
+        this.clockSpeed = clockSpeed;
+        this.core = core;
+        Log.i("MyMobile", "MediaTek: start with clockspeed : "+clockSpeed+" core : "+core);
     }
 
     @Override

@@ -23,11 +23,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MobileComponent component = DaggerMobileComponent.builder()
-                .snapdragonModule(new SnapdragonModule(3))
+                .setClockSpeed(4)
+                .setCore(2)
                 .build();
+
         component.inject(this);
         mobile.run();
 
-        //Dagger 2 Tutorial Part 6 - Providing Value at run time in dagger module in hindi (2020) Android Studio Tutorial
+        //@component.builder, @bindsinstance & @named
+
     }
 }
