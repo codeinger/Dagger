@@ -4,6 +4,7 @@ package com.codeinger.exdagger.component;
 import com.codeinger.exdagger.MainActivity;
 import com.codeinger.exdagger.model.Mobile;
 import com.codeinger.exdagger.modules.BatteryModule;
+import com.codeinger.exdagger.modules.CameraModule;
 import com.codeinger.exdagger.modules.MediaTekModule;
 import com.codeinger.exdagger.modules.SnapdragonModule;
 
@@ -12,7 +13,7 @@ import javax.inject.Named;
 import dagger.BindsInstance;
 import dagger.Component;
 
-@Component(modules = {BatteryModule.class, MediaTekModule.class})
+@Component(modules = {BatteryModule.class, MediaTekModule.class,CameraModule.class})
 public interface MobileComponent {
 
   //  Mobile getMobile();
@@ -20,17 +21,16 @@ public interface MobileComponent {
     void inject(MainActivity activity);
 
 
-    @Component.Builder
-    interface Builder{
-
-        @BindsInstance
-        Builder setClockSpeed(@Named("clockSpeed") int clockSpeed);
-
-        @BindsInstance
-        Builder setCore(@Named("core") int core);
 
 
-        MobileComponent build();
+    @Component.Factory
+    interface Factory{
+
+        MobileComponent create(@BindsInstance @Named("clockSpeed") int clockSpeed,
+                               @BindsInstance @Named("core") int core,
+                               @BindsInstance @Named("megapixel") int megapixel
+        );
+
     }
 
 

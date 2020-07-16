@@ -22,15 +22,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        MobileComponent component = DaggerMobileComponent.builder()
-                .setClockSpeed(4)
-                .setCore(2)
-                .build();
+        MobileComponent component = DaggerMobileComponent.factory().create(3,8,64);
 
         component.inject(this);
         mobile.run();
 
-        //@component.builder, @bindsinstance & @named
+        //@Component.Factory
 
     }
 }

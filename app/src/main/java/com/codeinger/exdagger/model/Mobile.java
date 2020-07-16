@@ -8,12 +8,14 @@ public class Mobile {
 
 
     private Battery battery;
+    private Camera Camera;
     private Proccessor proccessor;
 
     @Inject
-    public Mobile(Battery battery,Proccessor proccessor) {
+    public Mobile(Battery battery,Proccessor proccessor,Camera Camera) {
         this.proccessor = proccessor;
         this.battery = battery;
+        this.Camera = Camera;
         Log.i("MyMobile", "Mobile: ");
 
     }
