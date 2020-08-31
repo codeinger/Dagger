@@ -3,10 +3,12 @@ package com.codeinger.exdagger.model;
 import android.util.Log;
 
 import javax.inject.Inject;
+import javax.inject.Singleton;
+
 
 public class Battery {
 
-    //we don't own this class so we can't annotate it with @Inject
+
 
     private Cobalt cobalt;
     private Lithium lithium;

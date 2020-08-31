@@ -4,6 +4,7 @@ import com.codeinger.exdagger.model.Battery;
 import com.codeinger.exdagger.model.Cobalt;
 import com.codeinger.exdagger.model.Lithium;
 
+import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 
@@ -22,6 +23,7 @@ public abstract class BatteryModule {
        return lithium;
     }
 
+    @Singleton
     @Provides
     static Battery getBattery(Lithium lithium,Cobalt cobalt){
        return new Battery(cobalt,lithium);
