@@ -18,7 +18,7 @@ import dagger.Component;
 @Component(modules = {BatteryModule.class, MediaTekModule.class,CameraModule.class})
 public interface MobileComponent {
 
-  //  Mobile getMobile();
+    Mobile getMobile();
 
     void inject(MainActivity activity);
 
