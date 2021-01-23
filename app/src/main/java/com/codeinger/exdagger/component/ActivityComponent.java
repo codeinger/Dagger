@@ -12,7 +12,7 @@ import dagger.Subcomponent;
 @Subcomponent(modules = {BatteryModule.class})
 public interface ActivityComponent {
 
-    FragmentComponent getFragmentComponent(SnapdragonModule module);
+    FragmentComponent.Builder getFragmentComponentBuilder();
 
     Battery getBattery();
 

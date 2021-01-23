@@ -44,8 +44,7 @@ public class MainFragment extends Fragment {
         camera1 = applicationComponent.getCamera();
         camera2 = applicationComponent.getCamera();
 
-        component = activityComponent.getFragmentComponent(new SnapdragonModule(3));
-
+        component = activityComponent.getFragmentComponentBuilder().setClockSpeed(3).setCore(8).build();
         proccessor1 = component.getProcessor();
         proccessor2 = component.getProcessor();
         mobile1 = component.getMobile();
