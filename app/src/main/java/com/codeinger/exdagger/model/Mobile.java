@@ -7,6 +7,8 @@ import javax.inject.Inject;
 public class Mobile {
 
 
+
+
     private Battery battery;
     private Camera Camera;
     private Proccessor proccessor;
@@ -16,7 +18,6 @@ public class Mobile {
         this.proccessor = proccessor;
         this.battery = battery;
         this.Camera = Camera;
-        Log.i("hdbfvhjdf", "Mobile: "+battery.toString()+" "+proccessor.toString()+" "+this.toString());
 
     }
 
@@ -26,10 +27,12 @@ public class Mobile {
     }
 
 
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Mobile{" +
+                "battery=" + battery +
+                ", Camera=" + Camera +
+                ", proccessor=" + proccessor +
+                '}';
+    }
 }
