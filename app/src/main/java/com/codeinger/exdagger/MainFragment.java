@@ -11,12 +11,12 @@ import android.view.ViewGroup;
 
 import com.codeinger.exdagger.component.ActivityComponent;
 import com.codeinger.exdagger.component.ApplicationComponent;
-import com.codeinger.exdagger.component.DaggerFragmentComponent;
 import com.codeinger.exdagger.component.FragmentComponent;
 import com.codeinger.exdagger.model.Battery;
 import com.codeinger.exdagger.model.Camera;
 import com.codeinger.exdagger.model.Mobile;
 import com.codeinger.exdagger.model.Proccessor;
+import com.codeinger.exdagger.modules.SnapdragonModule;
 
 
 public class MainFragment extends Fragment {
@@ -44,9 +44,7 @@ public class MainFragment extends Fragment {
         camera1 = applicationComponent.getCamera();
         camera2 = applicationComponent.getCamera();
 
-        component = DaggerFragmentComponent.builder().setCore(8).setClockSpeed(3)
-                .setApplicationComponent(applicationComponent)
-                .setActivityComponent(activityComponent).build();
+        component = activityComponent.getFragmentComponent(new SnapdragonModule(3));
 
         proccessor1 = component.getProcessor();
         proccessor2 = component.getProcessor();

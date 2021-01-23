@@ -9,7 +9,6 @@ import android.util.Log;
 
 import com.codeinger.exdagger.component.ActivityComponent;
 import com.codeinger.exdagger.component.ApplicationComponent;
-import com.codeinger.exdagger.component.DaggerActivityComponent;
 import com.codeinger.exdagger.model.Battery;
 import com.codeinger.exdagger.model.Camera;
 import com.codeinger.exdagger.model.Mobile;
@@ -39,13 +38,15 @@ public class MainActivity extends AppCompatActivity {
         replace(new MainFragment());
 
 
-        component = DaggerActivityComponent.builder().build();
-        battery1 = component.getBattery();
-        battery2 = component.getBattery();
+
 
         ApplicationComponent applicationComponent = ((MainApplication)getApplicationContext()).getComponent();
         camera1 = applicationComponent.getCamera();
         camera2 = applicationComponent.getCamera();
+
+        component = applicationComponent.getActivityComponent();
+        battery1 = component.getBattery();
+        battery2 = component.getBattery();
 
         Log.i("sjahcvjhds", "================Activity:============ ");
         Log.i("sjahcvjhds", "Activity: "+battery1);
